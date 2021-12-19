@@ -1,0 +1,39 @@
+<!-- Legacy form field -->
+<div class="angularForm">
+<p>
+    <mat-form-field appearance="legacy">
+      <mat-label>Email Address:</mat-label>
+      <input matInput placeholder="Enter your email" [formControl]="email" required>
+      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+      <mat-icon matSuffix>mail_outline</mat-icon>
+    </mat-form-field>
+  </p>
+  <!-- Standard form field -->
+  <p>
+    <mat-form-field appearance="standard">
+      <mat-label>Phone Number:</mat-label>
+      <input matInput placeholder="Your Phone">
+      <mat-icon matSuffix>phone</mat-icon>
+      <mat-hint>Phone number with Country code</mat-hint>
+    </mat-form-field>
+  </p>
+  <!-- Fill form field -->  
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Username:</mat-label>
+      <input matInput placeholder="Your username">
+      <mat-icon matSuffix>person_outline</mat-icon>
+      <mat-hint>Use unique username</mat-hint>
+    </mat-form-field>
+  </p>
+  <!-- Outline form field -->
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input matInput placeholder="Your password" type="password">
+      <mat-icon matSuffix>lock</mat-icon>
+      <mat-hint>Min 8 char 1 number and 1 alpha</mat-hint>
+    </mat-form-field>
+  </p>
+  <button mat-button color="primary" [disabled]="email.invalid">Primary</button>
+</div>
